@@ -40,37 +40,37 @@ The computed frequencies correspond to the following graphlets:
 | 15 | 4-clique, at any node |
 """
 function fglt(A::SparseMatrixCSC)
-    (n, m) = size(A)
-
-    (n == m) || error("The adjacency matrix A must be square.")
+    (A.n == A.m) || error("The adjacency matrix A must be square.")
+    n = A.n
 
     # Allocate the output matrices as arrays-of-pointers.
-    f = [zeros(n) for i = 1:16]
-    fn = copy(f)
+    f = zeros(n, 16)
+    fn = zeros(n, 16)
 
-    ii = A.colptr
-    jStart = A.rowval
+    ii = A.rowval .- 1
+    jStart = A.colptr .- 1
 
-    # The number of edges is half the number of non-zero entries.
-    m = div(nnz(A), 2)
+    # The number of edges is the number of non-zero entries
+    m = nnz(A)
 
     np = workers()
 
-    ccall((:compute, "libfglt"), Cvoid,
-          (Ptr{Ptr{Cdouble}},
-           Ptr{Ptr{Cdouble}},
-           Ptr{Csize_t},
-           Ptr{Csize_t},
-           Csize_t,
-           Csize_t,
-           Csize_t),
-          f, fn, ii, jStart, m, n, np)
-
-    # Convert the arrays-of-pointers into dense Julia matrices
-    f = foldl(hcat, f)
-    fn = foldl(hcat, fn)
+    GC.@preserve f fn ii jStart begin
+        ccall((:compute, "libfglt"), Cvoid,
+              (Ptr{Ptr{Cdouble}},
+               Ptr{Ptr{Cdouble}},
+               Ptr{Csize_t},
+               Ptr{Csize_t},
+               Csize_t,
+               Csize_t,
+               Csize_t),
+              f, fn, ii, jStart, n, m, np)
+    end
 
     (f, fn)
 end
+
+# See: https://stackoverflow.com/questions/33003174/calling-a-c-function-from-julia-and-passing-a-2d-array-as-a-pointer-of-pointers
+Base.cconvert(::Type{Ptr{Ptr{Cdouble}}},xx2::Matrix{Cdouble})=Ref{Ptr{Cdouble}}([Ref(xx2,i) for i=1:size(xx2,1):length(xx2)])
 
 end # module
