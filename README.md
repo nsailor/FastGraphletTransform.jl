@@ -6,7 +6,7 @@ Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt
 
 ## Installation
 
-This wrapper expects the FGLT shared library to be installed, wich means that you need to build FGLT with Meson as described [here](https://github.com/NorthSailor/fglt#building-with-meson).
+This wrapper expects the FGLT shared library to be installed, which means that you need to build FGLT with Meson as described [here](https://github.com/NorthSailor/fglt#building-with-meson).
 
 Since this package is not in the Julia registry, you need to use the URL of this repository to add it to your Julia environment.
 To add the package, open a Julia prompt, enter the `pkg` mode by pressing `]`, and type:
