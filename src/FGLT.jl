@@ -43,9 +43,8 @@ function fglt(A::SparseMatrixCSC)
     (A.n == A.m) || error("The adjacency matrix A must be square.")
     n = A.n
 
-    # Allocate the output matrices as arrays-of-pointers.
-    f = zeros(n, 16)
-    fn = zeros(n, 16)
+    f = zeros(Cdouble, n, 16)
+    fn = zeros(Cdouble, n, 16)
 
     ii = A.rowval .- 1
     jStart = A.colptr .- 1
@@ -67,7 +66,9 @@ function fglt(A::SparseMatrixCSC)
               f, fn, ii, jStart, n, m, np)
     end
 
-    (f, fn)
+    # Frequencies can only be integers.
+    # Will throw an InexactError if we somehow get a decimal.
+    (convert.(Int, f), convert.(Int, fn))
 end
 
 # See: https://stackoverflow.com/questions/33003174/calling-a-c-function-from-julia-and-passing-a-2d-array-as-a-pointer-of-pointers
