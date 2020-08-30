@@ -2,7 +2,7 @@
 
 Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt) C++/Cilk implementation.
 
-[![License: MPL-2.0](https://img.shields.io/github/license/NorthSailor/FGLT.jl)](https://www.mozilla.org/en-US/MPL/)
+[![License: MPL-2.0](https://img.shields.io/badge/License-MPLv2-blue)](https://www.mozilla.org/en-US/MPL/)
 
 ## Installation
 
