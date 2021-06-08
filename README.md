@@ -6,9 +6,6 @@ Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt
 
 ## Installation
 
-This wrapper expects the FGLT shared library to be installed.
-More information is available [here](https://github.com/fcdimitr/fglt).
-
 Since this package is not in the Julia registry, you need to use the URL of this repository to add it to your Julia environment.
 To add the package, open a Julia prompt, enter the `pkg` mode by pressing `]`, and type:
 
