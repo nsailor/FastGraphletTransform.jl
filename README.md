@@ -2,6 +2,8 @@
 
 Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt) C++/Cilk implementation.
 
+[![Build Status](https://github.com/fcdimitr/FGLT.jl/workflows/CI/badge.svg)](https://github.com/nsailor/FGLT.jl/actions)
+[![Coverage](https://codecov.io/gh/fcdimitr/FGLT.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/nsailor/FGLT.jl)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPLv2-blue)](https://www.mozilla.org/en-US/MPL/)
 
 ## Installation

@@ -1,8 +1,19 @@
 name = "FGLT"
 uuid = "8757296b-2078-477d-a41d-7d2812277c39"
-authors = ["Jason Barmparesos <jason@jasonb.dev>"]
-version = "0.1.0"
+authors = ["Jason Barmparesos <jason@jasonb.dev>, Dimitris Floros <flojim4@gmail.com>, and contributors"]
+version = "1.0.0"
 
 [deps]
 FGlT_jll = "34b0a953-27c5-5560-82f5-8ee8a9e462bb"
+LightGraphs = "093fc24a-ae57-5d10-9952-331d41423f4d"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Match = "7eb4fadd-790c-5f42-8a69-bfa0b872bfbf"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test", "Match"]
