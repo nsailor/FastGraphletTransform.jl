@@ -1,6 +1,6 @@
 module FGLT
 
-using SparseArrays
+using SparseArrays, FGlT_jll
 
 export fglt
 
@@ -9,7 +9,7 @@ export fglt
 
 Get the number of workers available to the FGLT implementation.
 """
-workers() = ccall((:getWorkers, "libfglt"), Cint, ())
+workers() = ccall((:getWorkers, libfglt), Cint, ())
 
 """
     fglt(A::SparseMatrixCSC{F, I})
@@ -55,7 +55,7 @@ function fglt(A::SparseMatrixCSC)
     np = workers()
 
     GC.@preserve f fn ii jStart begin
-        ccall((:compute, "libfglt"), Cvoid,
+        ccall((:compute, libfglt), Cvoid,
               (Ptr{Ptr{Cdouble}},
                Ptr{Ptr{Cdouble}},
                Ptr{Csize_t},

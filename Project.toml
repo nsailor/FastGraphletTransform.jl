@@ -4,4 +4,5 @@ authors = ["Jason Barmparesos <jason@jasonb.dev>"]
 version = "0.1.0"
 
 [deps]
+FGlT_jll = "34b0a953-27c5-5560-82f5-8ee8a9e462bb"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
