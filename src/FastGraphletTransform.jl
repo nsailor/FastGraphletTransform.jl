@@ -1,11 +1,11 @@
-module FGLT
+module FastGraphletTransform
 
 using SparseArrays, FGlT_jll
 
 export fglt
 
 """
-    FGLT.workers()
+    FastGraphletTransform.workers()
 
 Get the number of workers available to the FGLT implementation.
 """

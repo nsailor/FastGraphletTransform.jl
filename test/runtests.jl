@@ -1,4 +1,4 @@
-using FGLT
+using FastGraphletTransform
 using Test
 using Match
 using LightGraphs
@@ -65,7 +65,7 @@ function graphlet(name)
 
 end
 
-@testset "FGLT.jl" begin
+@testset "FastGraphletTransform.jl" begin
 
   # === 1-node graph
   U1 = ones(Int32, 1, 1);

@@ -1,9 +1,9 @@
-# FGLT.jl
+# FastGraphletTransform.jl
 
 Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt) C++/Cilk implementation.
 
-[![Build Status](https://github.com/nsailor/FGLT.jl/workflows/CI/badge.svg)](https://github.com/nsailor/FGLT.jl/actions)
-[![Coverage](https://codecov.io/gh/nsailor/FGLT.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/nsailor/FGLT.jl)
+[![Build Status](https://github.com/nsailor/FastGraphletTransform.jl/workflows/CI/badge.svg)](https://github.com/nsailor/FastGraphletTransform.jl/actions)
+[![Coverage](https://codecov.io/gh/nsailor/FastGraphletTransform.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/nsailor/FastGraphletTransform.jl)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPLv2-blue)](https://www.mozilla.org/en-US/MPL/)
 
 ## Installation
@@ -12,7 +12,7 @@ Since this package is not in the Julia registry, you need to use the URL of this
 To add the package, open a Julia prompt, enter the `pkg` mode by pressing `]`, and type:
 
 ```julia
-add https://github.com/NorthSailor/FGLT.jl
+add https://github.com/nsailor/FastGraphletTransform.jl
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ add https://github.com/NorthSailor/FGLT.jl
 To perform a fast graphlet transform, call the `fglt` function with the adjacency matrix for the graph, for instance:
 
 ```julia
-julia> using FGLT
+julia> using FastGraphletTransform
 
 julia> using SparseArrays
 
