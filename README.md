@@ -8,16 +8,15 @@ Julia wrapper for the [Fast Graphlet Transform](https://github.com/fcdimitr/fglt
 
 ## Installation
 
-Since this package is not in the Julia registry, you need to use the URL of this repository to add it to your Julia environment.
-To add the package, open a Julia prompt, enter the `pkg` mode by pressing `]`, and type:
+To add the package to your Julia environment, open a Julia prompt, enter the `pkg` mode by pressing `]`, and type:
 
 ```julia
-add https://github.com/nsailor/FastGraphletTransform.jl
+add FastGraphletTransform
 ```
 
 ## Usage
 
-To perform a fast graphlet transform, call the `fglt` function with the adjacency matrix for the graph, for instance:
+To perform a fast graphlet transform, call the `fglt` function with the graph's adjacency matrix, for instance:
 
 ```julia
 julia> using FastGraphletTransform
@@ -33,7 +32,7 @@ julia> A = sparse([0 1 0 0 1 0; 1 0 1 1 1 0; 0 1 0 1 1 0; 0 1 1 0 1 1; 1 1 1 1 0
  1  1  1  1  ⋅  ⋅
  ⋅  ⋅  ⋅  1  ⋅  ⋅
 
-julia> (f, fn) = fglt(A)
+julia> (f, fn) = fglt(A);
 Total elapsed time: 0.0000 sec
 
 julia> f # Raw frequencies (n x 16)
