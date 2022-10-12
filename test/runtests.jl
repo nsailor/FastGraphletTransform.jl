@@ -1,7 +1,7 @@
 using FastGraphletTransform
 using Test
 using Match
-using LightGraphs
+using Graphs
 using SparseArrays
 
 function claw()
