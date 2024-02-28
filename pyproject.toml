@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FastGraphletTransform"
+authors = [
+    {name = "Dimitris Floros", email = "fcdimitr@ece.auth.gr"},
+]
+description = "Fast Graphlet Transform for counting graphlets of large, sparse, undirected networks/graphs."
+readme = "README.md"
+license = {file = "LICENSE"}
+version = "1.1.0"
+dependencies = [
+    "juliacall", "scipy", "numpy"
+]
+keywords = ["correlation"]
+
+[tool.setuptools]
+packages = ["FastGraphletTransform"]
+
+[tool.setuptools.package-data]
+'FastGraphletTransform' = ['*.json']

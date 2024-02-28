@@ -1,0 +1,12 @@
+{
+    "julia": "1",
+    "packages": {
+        "FastGraphletTransform": {
+            "uuid": "8757296b-2078-477d-a41d-7d2812277c39",
+            "version": "1.1.0"
+        },
+        "SparseArrays": {
+            "uuid": "2f01184e-e22b-5df5-ae63-d93ebab69eaf",
+        }
+    }
+}
