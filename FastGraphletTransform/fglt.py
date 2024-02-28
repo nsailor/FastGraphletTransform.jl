@@ -2,7 +2,7 @@ import numpy as np
 from scipy.sparse import isspmatrix_csc, isspmatrix_coo
 from juliacall import Main as jl
 
-def fglt(A):
+def transform(A):
     if isspmatrix_coo(A):
         array_jl = jl.SparseArrays.sparse(jl.Array(A.row+1), jl.Array(A.col+1), jl.Array(A.data), A.shape[0], A.shape[1])
     elif isspmatrix_csc(A):
